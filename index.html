@@ -337,23 +337,110 @@
         </section>
 
         <!-- МОДАЛЬНОЕ ОКНО СО СТАТЬЕЙ 1 -->
-        <div id="article1-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-            <div class="bg-cardBg border border-cardBorder max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 rounded-3xl relative">
-                <button onclick="closeModal('article1')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-2">iGaming Copywriting & SEO</div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-6">Как писать обзоры онлайн-казино, которые проходят модерацию и конвертируют игроков</h2>
-                <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                    <p>Рынок гемблинг-трафика перенасыщен шаблонным контентом. Откройте любой информационный сайт или аффилейт-ресурс: девять из десяти обзоров казино выглядят как клоны друг друга. Одинаковые восторженные формулировки («лучшее заведение», «щедрые бонусы», «мгновенные выплаты»), отсутствие конкретики и банальный рерайт чужих текстов.</p>
-                    <p>Современные игроки обладают высокой «баннерной слепотой» к маркетинговому шуму. Алгоритмы поисковых систем (Google и Яндекс) со стандартом E-E-A-T научились вычислять поверхностные тексты за секунды. В High-Risk нише контент — это инструмент доверия и конверсии.</p>
+       <!-- ПОЛНОЕ МАСШТАБНОЕ МОДАЛЬНОЕ ОКНО СО СТАТЬЕЙ 1 -->
+<div id="article1-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-cardBg border border-cardBorder max-w-5xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-12 rounded-3xl relative shadow-2xl">
+        <button onclick="closeModal('article1')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center transition-colors">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            iGaming Copywriting & SEO High-Risk Strategy
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
+            Как писать обзоры онлайн-казино, которые проходят жесткую модерацию и конвертируют игроков
+        </h2>
+
+        <div class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed border-t border-slate-800/80 pt-6">
+            <p>
+                Рынок гемблинг-трафика перенасыщен шаблонным контентом. Откройте любой аффилейт-сайт или обзорный портал: девять из десяти текстов о казино выглядят как бесплодные клоны друг друга. Одинаковые восторженные штампы вроде <em>«лучшее заведение»</em>, <em>«самые щедрые бонусы»</em> и <em>«мгновенные выплаты»</em>, полное отсутствие конкретики и примитивный рерайт чужих материалов убивают любые попытки занять топ поисковой выдачи.
+            </p>
+            <p>
+                Современные пользователи обладают высочайшей «баннерной слепотой» к маркетинговому шуму. Более того, алгоритмы поисковых систем Google и Яндекс, опирающиеся на жесткие стандарты <strong>E-E-A-T</strong> (Experience, Expertise, Authoritativeness, Trustworthiness — опыт, экспертиза, авторитетность, надежность), а также бескомпромиссные модераторы рекламных сетей научились вычислять поверхностный контент за доли секунды. В сегменте High-Risk копирайтинг перестал быть просто «наполнением страниц ключевыми словами». Сегодня это главный инструмент формирования доверия и конверсии трафика в реальных депозиторов.
+            </p>
+            <p>
+                Как профессиональный <strong>iGaming-копирайтер и контент-редактор</strong> с 12-летним стажем, я детально разберу внутреннюю анатомию по-настоящему сильного обзора казино, который гарантированно удерживает позиции под алгоритмами поисковых систем и привлекает качественную аудиторию.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-slate-800/60">
+                1. Психология игрока и закрытие главных страхов в тексте
+            </h3>
+            <p>
+                Чтобы текстовая страница выполняла свою коммерческую задачу, она должна превентивно отвечать на ключевые тревоги пользователя. Чего панически боится игрок, приходя на новый игровой сайт?
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-slate-300">
+                <li><strong>Страх невыплаты выигрыша:</strong> задержки транзакций под надуманными предлогами или полная блокировка счета.</li>
+                <li><strong>Проблемы с верификацией (KYC):</strong> бесконечный запрос документов, селфи с паспортом и выписок из банков.</li>
+                <li><strong>Скриптовый софт:</strong> поддельные слоты с накрученным оператором процентом отдачи (RTP) и измененной дисперсией.</li>
+                <li><strong>Кабальные условия бонусов:</strong> скрытые вейджеры, лимиты на максимальный вывод с фриспинов и запрещенные категории игр.</li>
+            </ul>
+            <p>
+                Экспертный обзор никогда не замалчивает эти нюансы. Напротив, детальный разбор регламента выплат и процедур безопасности мгновенно повышает лояльность читателя.
+            </p>
+
+            <h4 class="text-xl font-bold text-cyan-400 pt-4">Математика бонусов: как писать про вейджеры без воды</h4>
+            <p>
+                Самая частая ошибка авторов-новичков — слепое копирование промо-описаний из маркетинговых кабинетов операторов.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+                <div class="p-5 rounded-2xl bg-darkBg border border-red-500/30">
+                    <div class="text-red-400 font-bold mb-2"><i class="fas fa-times-circle"></i> Как пишут дилетанты</div>
+                    <p class="text-sm text-slate-400">«Казино дарит умопомрачительные 200% на первый депозит и целую сотню фриспинов! Регистрируйтесь прямо сейчас, крутите барабаны и забирайте легкие деньги без ограничений!»</p>
                 </div>
-                <div class="mt-8 pt-6 border-t border-slate-800 flex justify-between items-center">
-                    <span class="text-slate-400 text-sm">Обсудим ваш проект?</span>
-                    <a href="https://t.me/olegwald" target="_blank" class="px-6 py-3 rounded-xl bg-cyan-500 text-black font-bold text-sm">Написать в Telegram</a>
+                <div class="p-5 rounded-2xl bg-darkBg border border-emerald-500/30">
+                    <div class="text-emerald-400 font-bold mb-2"><i class="fas fa-check-circle"></i> Как пишут профессионалы</div>
+                    <p class="text-sm text-slate-400">«Приветственный пакет включает 200% бонус с вейджером x35 (отыгрыш только с бонусного баланса). Обратите внимание: максимальная ставка при активном бонусе ограничена 5 EUR, а слоты провайдера X исключены из отыгрыша согласно правилу п. 4.2».</p>
                 </div>
             </div>
+            <p>
+                Второй подход демонстрирует читателю честность. Игрок понимает правила игры до внесения депозита, а бренд получает аудиторию, которая осознанно принимает условия, а не устраивает скандалы в службе поддержки.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-slate-800/60">
+                2. Техническая база и юридическая прозрачность (E-E-A-T факты)
+            </h3>
+            <p>
+                Поисковые системы жестко наказывают сайты за недостоверную или вводящую в заблуждение информацию в финансовых и гемблинг-тематиках. Чтобы контент соответствовал стандартам E-E-A-T, он должен базироваться на верифицируемых фактах:
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-slate-300">
+                <li><strong>Лицензирование:</strong> Точное указание регулятора (например, Curaçao Gaming Control Board, MGA, Anjouan) с активными ссылками на официальные валидаторы лицензий.</li>
+                <li><strong>Провайдеры и RNG:</strong> Наличие софта от лидеров индустрии (Pragmatic Play, NetEnt, Evolution, Microgaming) с независимым аудитом генератора случайных чисел (сертификаты iTech Labs, eCOGRA).</li>
+                <li><strong>Платежные шлюзы:</strong> Подробный перечень фиатных систем (Visa/Mastercard, пиринговые переводы) и криптовалютных сетей (TRC-20, ERC-20, Bitcoin) с указанием комиссий и лимитов.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-slate-800/60">
+                3. SEO-архитектура и High-Risk семантика
+            </h3>
+            <p>
+                Продвижение в нише азартных игр требует ювелирной работы с семантическим ядром. Грубый переспам ключевых фраз (keyword stuffing) приводит к мгновенному наложению санкций. 
+            </p>
+            <p>
+                Правильная стратегия строится на глубокой кластеризации и насыщении текста релевантным <strong>LSI-окружением</strong>. В статье органично используются термины, подтверждающие реальное погружение в тему: <em>волатильность, дисперсия, RTP, лудомания, самоисключение, AML-политика, провайдеры софта, вейджер, кешбэк, лимиты стола</em>.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-slate-800/60">
+                4. Ответственная игра (Responsible Gaming) как стандарт качества
+            </h3>
+            <p>
+                Ни один качественный обзор в современной индустрии не обходится без блока об ответственном гемблинге. Интеграция ссылок на профильные организации (GamCare, Gambling Therapy), а также описание инструментов самоограничения (установка лимитов на депозиты, тайм-ауты сессий) — это не формальность, а критический фактор для успешной модерации сайта поисковиками.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-slate-800/60">
+                Заключение
+            </h3>
+            <p>
+                Создание сильного контента для iGaming — это сложный симбиоз технического аудита, безупречного фактчекинга, понимания психологии игрока и глубокой SEO-оптимизации. Именно такой подход позволяет проектам занимать лидирующие позиции, а бизнесу — привлекать платежеспособную аудиторию. Если вашему проекту нужен экспертный копирайтер или контент-редактор с 12-летним опытом, давайте обсудим задачи.
+            </p>
         </div>
+
+        <div class="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-slate-400 text-sm">Говы обсудить ваш проект или контент-стратегию?</span>
+            <a href="https://t.me/olegwald" target="_blank" class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-base shadow-xl shadow-cyan-500/25 transition-all">
+                <i class="fab fa-telegram-plane mr-2"></i> Написать в Telegram (@olegwald)
+            </a>
+        </div>
+    </div>
+</div>
 
         <!-- МОДАЛЬНОЕ ОКНО СО СТАТЬЕЙ 2 -->
         <div id="article2-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
