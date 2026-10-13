@@ -1,4 +1,4 @@
-<a><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -34,13 +35,69 @@
             font-family: 'Inter', sans-serif;
             background-color: #090d16;
             color: #f8fafc;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+        /* Стили для светлой темы */
+        html.light body {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+        html.light .glass-nav {
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: #e2e8f0 !important;
+        }
+        html.light .bg-cardBg {
+            background-color: #ffffff !important;
+            border-color: #cbd5e1 !important;
+        }
+        html.light .text-slate-400, html.light .text-slate-300 {
+            color: #475569 !important;
+        }
+        html.light .text-white {
+            color: #0f172a !important;
+        }
+        html.light input, html.light textarea, html.light select {
+            background-color: #f8fafc !important;
+            color: #0f172a !important;
+            border-color: #cbd5e1 !important;
+        }
+
         .glow-effect {
             box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
         }
         .glass-nav {
             background: rgba(9, 13, 22, 0.85);
             backdrop-filter: blur(12px);
+        }
+
+        /* 3D Кнопки меню */
+        .btn-3d {
+            position: relative;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 500;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        html.light .btn-3d {
+            background: rgba(226, 232, 240, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            color: #334155;
+        }
+        .btn-3d:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #06b6d4, #a855f7);
+            color: #ffffff !important;
+            border-color: transparent;
+            box-shadow: 0 7px 14px -3px rgba(6, 182, 212, 0.4), 0 3px 6px -2px rgba(168, 85, 247, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        .btn-3d:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -58,15 +115,20 @@
                 </div>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-cyan-400 transition-colors">Обо мне</a>
-                <a href="#services" class="hover:text-cyan-400 transition-colors">Услуги</a>
-                <a href="#portfolio" class="hover:text-cyan-400 transition-colors">Проекты</a>
-                <a href="#blog" class="hover:text-cyan-400 transition-colors">Блог & Статьи</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors">Контакты</a>
+            <nav class="hidden md:flex items-center gap-3 text-sm font-medium text-slate-300">
+                <a href="#about" class="btn-3d">Обо мне</a>
+                <a href="#services" class="btn-3d">Услуги</a>
+                <a href="#portfolio" class="btn-3d">Проекты</a>
+                <a href="#blog" class="btn-3d">Блог & Статьи</a>
+                <a href="#contact" class="btn-3d">Контакты</a>
             </nav>
 
             <div class="flex items-center gap-4">
+                <!-- Кнопка переключения темы сверху -->
+                <button id="theme-toggle" aria-label="Переключить тему" class="w-10 h-10 rounded-xl bg-cardBg border border-cardBorder flex items-center justify-center text-cyan-400 hover:scale-105 transition-all shadow-md">
+                    <i id="theme-icon" class="fas fa-sun"></i>
+                </button>
+
                 <a href="https://t.me/olegwald" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
                     <i class="fab fa-telegram-plane"></i> Telegram
                 </a>
@@ -305,7 +367,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Статья 1 (Ссылка на отдельный файл article-1.html) -->
+                    <!-- Статья 1 -->
                     <div class="p-8 rounded-3xl bg-cardBg border border-cardBorder hover:border-cyan-500/50 transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold">SEO & High-Risk</span>
@@ -314,12 +376,12 @@
                                 Почему шаблонный контент убивает конверсию в гемблинге, как честно разбирать вейджеры, бонусы и техническую базу, чтобы вызывать доверие у игроков и поисковых роботов.
                             </p>
                         </div>
-                      <a href="kak-pisat-obzory-onlain-kazino.html" class="inline-flex items-center gap-2 text-cyan-400 font-semibold text-sm hover:text-cyan-300">
-    Читать статью <i class="fas fa-arrow-right text-xs"></i>
-</a>
+                        <a href="kak-pisat-obzory-onlain-kazino.html" class="inline-flex items-center gap-2 text-cyan-400 font-semibold text-sm hover:text-cyan-300">
+                            Читать статью <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
                     </div>
 
-                    <!-- Статья 2 (Модальное окно для примера) -->
+                    <!-- Статья 2 -->
                     <div class="p-8 rounded-3xl bg-cardBg border border-cardBorder hover:border-purple-500/50 transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold">HR & Наем</span>
@@ -329,14 +391,12 @@
                             </p>
                         </div>
                         <a href="kak-proverit-kvalifikatsiyu-igaming-kopiraytera.html" class="inline-flex items-center gap-2 text-purple-400 font-semibold text-sm hover:text-purple-300">
-    Читать статью <i class="fas fa-arrow-right text-xs"></i>
-</a>
+                            Читать статью <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-
 
         <!-- КОНТАКТЫ И ФОРМА -->
         <section id="contact" class="py-24 relative overflow-hidden">
@@ -430,13 +490,30 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        function openModal(id) {
-            document.getElementById(id + '-modal').classList.remove('hidden');
+        // Скрипт переключения светлой и темной темы с сохранением в память браузера
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Проверяем сохраненную тему
+        if (localStorage.getItem('theme') === 'light') {
+            htmlElement.classList.add('light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
         }
 
-        function closeModal(id) {
-            document.getElementById(id + '-modal').classList.add('hidden');
-        }
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('light');
+            if (htmlElement.classList.contains('light')) {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
     </script>
 </body>
 </html>
